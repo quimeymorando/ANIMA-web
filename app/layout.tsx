@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
     title: 'ANIMA — Ciencia. Experiencia. Propósito.',
@@ -34,7 +35,17 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="es" className="scroll-smooth">
+        <html lang="es">
+            <head>
+                <Script id="scroll-restoration" strategy="beforeInteractive">
+                    {`
+                        if ('scrollRestoration' in history) {
+                            history.scrollRestoration = 'manual';
+                        }
+                        window.scrollTo(0, 0);
+                    `}
+                </Script>
+            </head>
             <body className="antialiased">
                 <Navbar />
                 <main>{children}</main>

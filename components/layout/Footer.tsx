@@ -1,10 +1,10 @@
 import Link from 'next/link'
 
 const footerLinks = [
-    { href: '#servicios', label: 'Servicios' },
-    { href: '#investigacion', label: 'Investigación' },
-    { href: '#nosotros', label: 'Nosotros' },
-    { href: '#contacto', label: 'Contacto' },
+    { href: '/servicios', label: 'Servicios' },
+    { href: '/#investigacion', label: 'Investigación' },
+    { href: '/#nosotros', label: 'Nosotros' },
+    { href: '/#contacto', label: 'Contacto' },
 ]
 
 export default function Footer() {

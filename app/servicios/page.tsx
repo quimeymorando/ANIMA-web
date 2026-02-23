@@ -260,9 +260,9 @@ export default function ServiciosPage() {
         <main className="min-h-screen bg-[var(--fondo-oscuro)]">
 
             {/* ── HERO ─────────────────────────────────────────────────────────── */}
-            <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-[90vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
 
-                <div ref={heroRef} className="container-anima relative z-10 text-center py-32 md:py-40">
+                <div ref={heroRef} className="container-anima relative z-10 text-center py-24 md:py-40">
                     {/* Eyebrow */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -282,12 +282,14 @@ export default function ServiciosPage() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={heroInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.1 }}
-                        className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--texto-claro)] leading-tight mb-6 max-w-4xl mx-auto"
+                        className="font-editorial text-5xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--texto-claro)] leading-[1.15] mb-6 max-w-4xl mx-auto px-2"
                     >
                         Ingeniería Consciente:{' '}
+                        <br className="block md:hidden" />
                         <em className="text-gradient-dorado not-italic">La Ciencia</em>
                         <br className="hidden md:block" />
                         {' '}al Servicio de{' '}
+                        <br className="block md:hidden" />
                         <em className="text-gradient-verde not-italic">la Vida.</em>
                     </motion.h1>
 
@@ -296,7 +298,7 @@ export default function ServiciosPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={heroInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.7, delay: 0.2 }}
-                        className="body-lg text-[var(--texto-gris)] max-w-2xl mx-auto mb-10"
+                        className="body-lg text-lg md:text-base text-[var(--texto-gris)] max-w-2xl mx-auto mb-10 px-4"
                     >
                         Elevamos el estándar genético y productivo del cannabis a través de biotecnología de precisión.
                     </motion.p>
@@ -445,7 +447,7 @@ export default function ServiciosPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={ctaInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.7, delay: 0.3 }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                        className="flex flex-col items-center justify-center gap-6"
                     >
                         <a
                             href="/#contacto"

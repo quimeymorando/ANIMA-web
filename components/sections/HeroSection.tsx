@@ -50,7 +50,7 @@ export default function HeroSection() {
             />
 
             {/* Etiqueta superior — centrada, se mantiene en su lugar */}
-            <div className="relative z-10 flex justify-center pt-36 md:pt-44">
+            <div className="relative z-10 flex justify-center pt-24 md:pt-24">
                 <motion.div
                     variants={fadeUp}
                     initial="hidden"
@@ -66,17 +66,17 @@ export default function HeroSection() {
                 </motion.div>
             </div>
 
-            {/* Layout: imagen izquierda + texto derecha, crecen para ocupar el resto */}
-            <div className="relative z-10 flex flex-row items-end flex-1 w-full">
+            {/* Layout: flex-col en mobile (imagen arriba, texto abajo), flex-row en desktop */}
+            <div className="relative z-10 flex flex-col md:flex-row items-center md:items-end flex-1 w-full pt-4 md:pt-0 h-full">
 
-                {/* Imagen — pegada al borde izquierdo e inferior del hero, sin ningún margen */}
+                {/* Imagen — align a la izquierda en mobile para mantener el estilo, abajo a la izquierda en desktop */}
                 <motion.div
                     initial={{ opacity: 0, x: -40 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.35, ease: 'easeOut' }}
-                    className="flex-shrink-0 self-end"
+                    className="flex-shrink-0 self-start md:self-end mt-2 md:mt-0"
                     style={{
-                        width: 'clamp(220px, 42vw, 580px)',
+                        width: 'clamp(260px, 70vw, 580px)',
                         marginLeft: 0,
                         marginBottom: 0,
                         paddingLeft: 0,
@@ -98,21 +98,23 @@ export default function HeroSection() {
                     />
                 </motion.div>
 
-                {/* Texto — lado derecho, verticalmente centrado */}
-                <div className="flex-1 flex items-center pb-20 md:pb-28 px-4 md:px-10">
+                {/* Texto — centrado en mobile, a la derecha en desktop */}
+                <div className="flex-1 flex items-center justify-center md:justify-start text-center md:text-left pb-20 md:pb-28 px-4 sm:px-6 md:px-10 z-20">
                     <motion.h1
                         variants={fadeUp}
                         initial="hidden"
                         animate="visible"
                         custom={0.5}
                         className="heading-xl text-[var(--texto-claro)]"
-                        style={{ lineHeight: '1.15' }}
+                        style={{ lineHeight: '1.2' }}
                     >
-                        El puente entre lo que somos{' '}
-                        <em className="text-gradient-dorado not-italic">biológicamente</em>
-                        <br />
+                        El puente entre lo{' '}
+                        <br className="block md:hidden" />
+                        que somos{' '}
+                        <em className="text-gradient-dorado not-italic block md:inline">biológicamente</em>
+                        <br className="hidden md:block" />
                         y lo que podemos ser{' '}
-                        <em className="text-gradient-verde not-italic">conscientemente.</em>
+                        <em className="text-gradient-verde not-italic block md:inline">conscientemente.</em>
                     </motion.h1>
                 </div>
             </div>

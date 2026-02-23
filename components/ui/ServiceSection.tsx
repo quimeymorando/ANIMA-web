@@ -36,7 +36,7 @@ export default function ServiceSection({
             initial={{ opacity: 0, x: invertido ? 40 : -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="flex flex-col justify-center"
+            className={`flex flex-col justify-center order-1 ${invertido ? 'md:order-2' : 'md:order-1'}`}
         >
             {/* Número + Tag */}
             <div className="flex items-center gap-4 mb-6">
@@ -108,7 +108,7 @@ export default function ServiceSection({
             initial={{ opacity: 0, x: invertido ? -40 : 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
-            className="relative flex items-center justify-center"
+            className={`relative flex items-center justify-center order-2 ${invertido ? 'md:order-1' : 'md:order-2'}`}
         >
             {visual}
         </motion.div>
@@ -119,17 +119,8 @@ export default function ServiceSection({
             className={`grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center py-16 md:py-24 border-b`}
             style={{ borderColor: 'rgba(201,168,76,0.08)' }}
         >
-            {invertido ? (
-                <>
-                    {visualContent}
-                    {textContent}
-                </>
-            ) : (
-                <>
-                    {textContent}
-                    {visualContent}
-                </>
-            )}
+            {textContent}
+            {visualContent}
         </div>
     )
 }
