@@ -10,6 +10,7 @@ import {
     ArrowRight,
     Leaf,
 } from 'lucide-react'
+import Link from 'next/link'
 import ServiceSection from '@/components/ui/ServiceSection'
 
 // ─── Visuals para cada servicio ───────────────────────────────────────────────
@@ -449,19 +450,19 @@ export default function ServiciosPage() {
                         transition={{ duration: 0.7, delay: 0.3 }}
                         className="flex flex-col items-center justify-center gap-6"
                     >
-                        <a
+                        <Link
                             href="/#contacto"
                             className="btn-anima group text-sm"
                         >
                             Agendar Consultoría Técnica
                             <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href="/"
                             className="label-caps text-[var(--texto-gris)] hover:text-[var(--dorado-claro)] transition-colors duration-300 text-xs tracking-widest"
                         >
                             ← Volver al inicio
-                        </a>
+                        </Link>
                     </motion.div>
 
 
